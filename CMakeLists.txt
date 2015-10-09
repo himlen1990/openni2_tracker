@@ -10,6 +10,7 @@ pkg_check_modules(OpenNI2 REQUIRED libopenni2)
 find_path(OpenNI2_INCLUDEDIR
 	  NAMES OpenNI.h
 	  HINTS /usr/include/openni2)
+link_directories(/usr/lib/OpenNI2/Drivers) #can not find DummyDevice OniFile .etc if do not add this
 find_library(OpenNI2_LIBRARIES
 	     NAMES OpenNI2 DummyDevice OniFile PS1090
 	     HINTS /usr/lib/ /usr/lib/OpenNI2/Drivers
